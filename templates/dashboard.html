@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Student Management System</h1>
+
+    <h2>Dashboard</h2>
+
+    {% if perms.core.view_student %}
+        <h3>Students</h3>
+        <p>You can view students.</p>
+    {% endif %}
+
+
+    {% if perms.core.view_teacher %}
+        <h3>Teachers</h3>
+        <p>You can view teachers.</p>
+    {% endif %}
+
+
+    {% if perms.core.view_course %}
+        <h3>Courses</h3>
+        <p>You can view courses.</p>
+    {% endif %}
+
+
+    {% if perms.core.change_course %}
+        <h3>Course Management</h3>
+        <p>You can edit courses.</p>
+    {% endif %}
+
+
+    {% if perms.core.view_enrollment %}
+        <h3>Enrollments</h3>
+        <p>You can view enrollments.</p>
+    {% endif %}
+    
+</body>
+</html>
