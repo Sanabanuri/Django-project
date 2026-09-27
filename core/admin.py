@@ -23,3 +23,4 @@ class CourseAdmin(admin.ModelAdmin):
 class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ("student", "course", "enrolled_at")
     search_fields = ("student__name", "course__name")
+    list_filter = ("student", "course")

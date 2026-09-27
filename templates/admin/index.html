@@ -15,6 +15,30 @@
 
 
 {% block content %}
+
+    {% if user.is_superuser %}
+
+        <div class="alert alert-primary">
+            <h4>Admin Dashboard</h4>
+            <p>Welcome Admin. You have full access to the Student Management System.</p>
+        </div>
+
+    {% elif perms.core.add_course %}
+
+        <div class="alert alert-success">
+            <h4>Teacher Dashboard</h4>
+            <p>Welcome Teacher. You can manage courses and view students and enrollments.</p>
+        </div>
+
+    {% else %}
+
+        <div class="alert alert-info">
+            <h4>Student Dashboard</h4>
+            <p>Welcome Student. You can view courses, students and enrollments.</p>
+        </div>
+
+    {% endif %}
+    
     {% get_side_menu using="app_list" as dashboard_list %}
     {% if dashboard_list %}
         {% widthratio dashboard_list|length 2 1 as middle %}

@@ -79,5 +79,13 @@ DATABASES = {
     }
 }
 
+JAZZMIN_SETTINGS = {
+    "site_title": "Student Management System",
+    "site_header": "Student Management System",
+    "site_brand": "SMS",
+    "welcome_sign": "Welcome to Student Management System",
+}
+
 LOGIN_REDIRECT_URL = "/dashboard/"
 STATIC_URL = 'static/'
+
